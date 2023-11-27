@@ -1,0 +1,22 @@
+﻿@{ // вставка кода C#
+    string head = "Hello METANIT.COM!"; // определяем переменную head
+    string text = "ASP.NET Core Application";   // определяем переменную text
+
+    
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>METANIT.COM</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <h2>@head @text</h2>
+    <h2>Вставлен код C# с помощью движка Razor:</h2>
+    <h2>@@DateTime.Now =@DateTime.Now.ToLongDateString()</h2>
+    <h2>@ViewData["Name"]</h2>
+    <h2>@ViewData["Age"]</h2>
+</body>
+</html>
+

@@ -1,6 +1,7 @@
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();  // добавляем поддержку контроллеров
+builder.Services.AddControllersWithViews(); // добавление контроллеров с представлениями
 builder.Services.AddTransient<ITimeService, SimpleTimeService>(); // добавляем сервис ITimeService
 
 var app = builder.Build();

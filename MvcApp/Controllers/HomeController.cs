@@ -6,20 +6,26 @@ namespace MvcApp.Controllers
     {
         readonly ITimeService timeService;
 
-        public HomeController(ITimeService timeServ)
+        public HomeController(ITimeService timeServ) // в конструкторе контроллера можно принимать нужные services которые добавляются в Program.cs
         {
             timeService = timeServ;
         }
 
         public IActionResult Index(int age, string name)
         {
+            ViewData["Message"] = "Hello METANIT.COM";
+            ViewData["Name"] = $"Hello {name}";
+            ViewData["Age"] = $"Hello {age}";
+
+            return View();
+
             //return new HtmlResult("<h2>Hello METANIT.COM!</h2><div>with html results</div>");
 
             //if (age < 18) return Unauthorized(new Error("Access is denied"));
             //if (string.IsNullOrEmpty(name)) return BadRequest("Name undefined");
             //return Content($"Hello {(!string.IsNullOrEmpty(name) ? name : "no name")}! Your age is {age}");
 
-            return Ok("All is OK!");
+            //return Ok("All is OK!");
 
             //Person tom = new Person("Tom", 37);
             //var jsonOptions = new System.Text.Json.JsonSerializerOptions
@@ -61,9 +67,20 @@ namespace MvcApp.Controllers
             string file_name = "pict.png";
             return File(mas, file_type, file_name);
         }
+
+        // РАБОТА С СЕРВИСАМИ //////////////////////////////////////////////////////
         public IActionResult GetTime()
         {
+            return Content(timeService.Time); // возвращаем работу нужного сервиса
+        }
+        public IActionResult GetTimeFromServices([FromServices] ITimeService timeService) // можно просто передать нужный сервис в метод с префиксом [FromServices]
+        {
             return Content(timeService.Time);
+        }
+        public IActionResult GetTimeWithRequestServices()
+        {
+            ITimeService? timeService = HttpContext.RequestServices.GetService<ITimeService>();
+            return Content(timeService?.Time ?? "Undefined");
         }
     }
     record class Person(string Name, int Age);

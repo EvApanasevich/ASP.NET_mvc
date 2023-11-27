@@ -22,3 +22,5 @@ D:\.NET\MvcApp\MvcApp\obj\Debug\net6.0\MvcApp.genruntimeconfig.cache
 D:\.NET\MvcApp\MvcApp\bin\Debug\net6.0\Files\text.txt
 D:\.NET\MvcApp\MvcApp\bin\Debug\net6.0\Files\document.docx
 D:\.NET\MvcApp\MvcApp\bin\Debug\net6.0\Files\pict.png
+D:\.NET\MvcApp\MvcApp\obj\Debug\net6.0\MvcApp.RazorAssemblyInfo.cache
+D:\.NET\MvcApp\MvcApp\obj\Debug\net6.0\MvcApp.RazorAssemblyInfo.cs
