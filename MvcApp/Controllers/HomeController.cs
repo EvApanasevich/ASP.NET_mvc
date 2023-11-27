@@ -15,9 +15,11 @@ namespace MvcApp.Controllers
         {
             ViewData["Message"] = "Hello METANIT.COM";
             ViewData["Name"] = $"Hello {name}";
-            ViewData["Age"] = $"Hello {age}";
+            ViewBag.Age = $"Hello {age}";
 
-            return View();
+            var people = new List<string> { "Tom", "Sam", "Bob" };
+
+            return View(people);
 
             //return new HtmlResult("<h2>Hello METANIT.COM!</h2><div>with html results</div>");
 

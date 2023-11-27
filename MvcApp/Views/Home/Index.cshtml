@@ -1,4 +1,6 @@
-﻿@{ // вставка кода C#
+﻿@model List<string> // передаем из контроллера
+
+@{ // вставка кода C#
     string head = "Hello METANIT.COM!"; // определяем переменную head
     string text = "ASP.NET Core Application";   // определяем переменную text
 
@@ -16,7 +18,8 @@
     <h2>Вставлен код C# с помощью движка Razor:</h2>
     <h2>@@DateTime.Now =@DateTime.Now.ToLongDateString()</h2>
     <h2>@ViewData["Name"]</h2>
-    <h2>@ViewData["Age"]</h2>
+    <h2>@ViewBag.Age</h2>
+    <h2>Count: @Model.Count</h2>
 </body>
 </html>
 
